@@ -1,0 +1,16 @@
+let preloader = document.querySelector('#pl'),mainCover = document.querySelector('#mainCover'),gItemFirst = document.querySelector('#galleryItemFirst'),gItem2 = document.querySelector('#galleryItem2'),gItem3 = document.querySelector('#galleryItem3'),gItem4 = document.querySelector('#galleryItem4'),gItem5 = document.querySelector('#galleryItem5'),gItemLast = document.querySelector('#galleryItemLast'),pItemFirst = document.querySelector('#priceItemFirst'),pItem2 = document.querySelector('#priceItem2'),pItemlast = document.querySelector('#priceItemlast');
+window.addEventListener('load', () =>{preloader.classList.add('load-finish');setTimeout(() =>{mainCover.classList.remove('holderStart')}, 400);
+});
+let gI = document.querySelectorAll('.a');gI.forEach(function(element){element.addEventListener('click',gIReloader,false)});
+function gIReloader(){let that = this;that.classList.add('galleryItemSD');setTimeout(() =>{that.classList.add('galleryItemHide');that.classList.remove('galleryItem');that.classList.remove('galleryItemSD');}, 310);};
+gItemFirst.addEventListener('click', () =>{setTimeout(() =>{gItem2.classList.add('galleryItem')}, 310)});
+gItem2.addEventListener('click', () =>{setTimeout(() =>{gItem3.classList.add('galleryItem')}, 310)});
+gItem3.addEventListener('click', () =>{setTimeout(() =>{gItem4.classList.add('galleryItem')}, 310)});
+gItem4.addEventListener('click', () =>{setTimeout(() =>{gItem5.classList.add('galleryItem')}, 310)});
+gItem5.addEventListener('click', () =>{setTimeout(() =>{gItemLast.classList.add('galleryItem')}, 310)});
+gItemLast.addEventListener('click', () =>{setTimeout(() =>{gItemFirst.classList.add('galleryItem')}, 310)});
+let pI = document.querySelectorAll('.p');pI.forEach(function(element){element.addEventListener('click',pIReloader,false)});
+function pIReloader(){let that = this;that.classList.add('pricingBlockSD');setTimeout(() =>{that.classList.add('pricingBlockHide');that.classList.remove('pricingBlockShow');that.classList.remove('pricingBlockSD');}, 310);};
+pItemFirst.addEventListener('click', () =>{setTimeout(() =>{pItem2.classList.add('pricingBlockShow')}, 310)});
+pItem2.addEventListener('click', () =>{setTimeout(() =>{pItemlast.classList.add('pricingBlockShow')}, 310)});
+pItemlast.addEventListener('click', () =>{setTimeout(() =>{pItemFirst.classList.add('pricingBlockShow')}, 310)});
